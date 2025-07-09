@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "provincias",
+  "info": {
+    "singularName": "provincia",
+    "pluralName": "provincias",
+    "displayName": "Provincia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "comunidad_autonoma": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::comunidad-autonoma.comunidad-autonoma",
+      "inversedBy": "provincias"
+    },
+    "municipios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::municipio.municipio",
+      "mappedBy": "provincia"
+    }
+  }
+}

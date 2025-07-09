@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "centros",
+  "info": {
+    "singularName": "centro",
+    "pluralName": "centros",
+    "displayName": "Centro"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "municipio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::municipio.municipio",
+      "inversedBy": "centros"
+    }
+  }
+}

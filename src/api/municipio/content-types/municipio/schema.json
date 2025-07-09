@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "municipios",
+  "info": {
+    "singularName": "municipio",
+    "pluralName": "municipios",
+    "displayName": "Municipio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "provincia": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::provincia.provincia",
+      "inversedBy": "municipios"
+    },
+    "centros": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::centro.centro",
+      "mappedBy": "municipio"
+    }
+  }
+}

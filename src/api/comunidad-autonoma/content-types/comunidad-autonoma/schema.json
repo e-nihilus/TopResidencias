@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comunidad_autonomas",
+  "info": {
+    "singularName": "comunidad-autonoma",
+    "pluralName": "comunidad-autonomas",
+    "displayName": "ComunidadAutonoma"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "provincias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::provincia.provincia",
+      "mappedBy": "comunidad_autonoma"
+    }
+  }
+}
